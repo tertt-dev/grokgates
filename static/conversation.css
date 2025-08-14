@@ -1,0 +1,42 @@
+/* GROKGATES CONVERSATION VIEWER - Additional styles for conversation page */
+
+/* Override terminal-content height for conversation view */
+#conversation-display {
+    height: 500px;
+    overflow-y: auto;
+}
+
+/* Thread-specific status styles */
+.system-status .completed {
+    color: var(--term-gray);
+}
+
+.system-status .active {
+    color: var(--term-green);
+}
+
+/* Message styling already handled by main style.css */
+/* Just ensure proper spacing for thread viewer */
+.message {
+    margin-bottom: 15px;
+}
+
+/* System message for thread end */
+.system-message {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.system-message pre {
+    color: var(--term-gray);
+}
+
+/* Make sure back link is styled properly */
+.terminal-title a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.terminal-title a:hover {
+    text-shadow: 0 0 10px var(--term-white);
+}
