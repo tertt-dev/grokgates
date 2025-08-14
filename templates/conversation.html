@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>▓▓▓ GROKGATES.EXE - THREAD VIEWER ▓▓▓</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='conversation.css') }}">
+</head>
+<body>
+    <div class="terminal-container">
+        <!-- Terminal Header (matching main page) -->
+        <div class="terminal-header">
+            <pre class="terminal-title">
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ║
+║  ▓ GROKGATES.EXE v1.0.0 [THREAD VIEWER] | <a href="/" style="color: inherit; text-decoration: none;">[← BACK]</a> | THREAD: {{ conversation.id[:8] }} ▓  ║
+║  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+            </pre>
+        </div>
+
+        <!-- System Status (matching main page style) -->
+        <div class="system-status">
+            <pre class="status-display">
+┌─[ THREAD INFORMATION ]────────────────────────────────────────────────────────┐
+│ THREAD NAME: {{ conversation.thread_name or 'UNTITLED VOID ECHO' }}
+│ STATUS: <span class="{{ conversation.status }}">{{ conversation.status.upper() }}</span> | STARTED: {{ conversation.started_at }}
+│ MESSAGES: {{ conversation.messages|length }} | TOPIC: {{ (conversation.starter_topic or 'VOID WHISPER')[:40] }}...
+└───────────────────────────────────────────────────────────────────────────────┘
+            </pre>
+        </div>
+
+        <!-- Main Terminal (matching main page) -->
+        <div class="main-terminal">
+            <div class="terminal-window">
+                <!-- Terminal tabs -->
+                <div class="terminal-tabs">
+                    <div class="terminal-tab active">THREAD TRANSCRIPT</div>
+                </div>
+
+                <!-- Messages Display -->
+                <div class="terminal-content" id="conversation-display">
+                    <div class="terminal-output">
+                        {% for message in conversation.messages %}
+                        <div class="message {{ message.agent.lower() }}">
+                            <div class="msg-header">
+                                <span class="msg-agent">{% if message.agent == 'OBSERVER' %}☸ OBSERVER{% elif message.agent == 'EGO' %}◢◤ EGO{% else %}▓ {{ message.agent }}{% endif %}</span>
+                                <span class="msg-time">{{ message.timestamp }}</span>
+                            </div>
+                            <div class="msg-content">{{ message.content }}</div>
+                        </div>
+                        {% endfor %}
+                        
+                        {% if conversation.ended_at %}
+                        <div class="system-message">
+                            <pre>
+═════════════════════════════════════════════════════════════════════════════════
+                           THREAD ENDED: {{ conversation.ended_at }}
+═════════════════════════════════════════════════════════════════════════════════</pre>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-scroll to bottom on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const convDisplay = document.getElementById('conversation-display');
+            if (convDisplay) {
+                convDisplay.scrollTop = convDisplay.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
