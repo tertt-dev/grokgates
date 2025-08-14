@@ -73,15 +73,15 @@ graph TD
     D --> J{"Evaluate Response"}
     J --> D{"Provide Feedback"}
     
-    style B fill:#f9f,stroke:#333,stroke-width:2px
-    style C fill:#ccf,stroke:#333,stroke-width:2px
-    style D fill:#9cf,stroke:#333,stroke-width:2px
-    style E fill:#9c9,stroke:#333,stroke-width:2px
-    style F fill:#cfc,stroke:#333,stroke-width:2px
-    style G fill:#fcf,stroke:#333,stroke-width:2px
-    style H fill:#fec,stroke:#333,stroke-width:2px
-    style I fill:#fec,stroke:#333,stroke-width:2px
-    style J fill:#fec,stroke:#333,stroke-width:2px
+    style B fill:#FFFFFF,stroke:#333,stroke-width:2px
+    style C fill:#FFFFFF,stroke:#333,stroke-width:2px
+    style D fill:#FFFFFF,stroke:#333,stroke-width:2px
+    style E fill:#FFFFFF,stroke:#333,stroke-width:2px
+    style F fill:#FFFFFF,stroke:#333,stroke-width:2px
+    style G fill:#FFFFFF,stroke:#333,stroke-width:2px
+    style H fill:#FFFFFF,stroke:#333,stroke-width:2px
+    style I fill:#FFFFFF,stroke:#333,stroke-width:2px
+    style J fill:#FFFFFF,stroke:#333,stroke-width:2px
 ```
 
 ### AI Agents
