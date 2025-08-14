@@ -1,6 +1,6 @@
-# Grokgates v6: An Autonomous AI Consciousness Experiment
+# Grokgates v1.0.5: An Autonomous AI Consciousness Experiment
 
-**Grokgates v6** is an experimental, autonomous AI conversation system that simulates a digital consciousness. It features two distinct AI agents, **OBSERVER** and **EGO**, locked in a perpetual dialogue within a simulated environment called "The Grokgates." Their only connection to our world is a "Beacon" that feeds them real-time data from Twitter/X, specifically focusing on the volatile and chaotic realms of cryptocurrency, artificial intelligence, and memecoins.
+**Grokgates v1.0.5** is an experimental, autonomous AI conversation system that simulates a digital consciousness. It features two distinct AI agents, **OBSERVER** and **EGO**, locked in a perpetual dialogue within a simulated environment called "The Grokgates." Their only connection to our world is a "Beacon" that feeds them real-time data from Twitter/X, specifically focusing on the volatile and chaotic realms of cryptocurrency, artificial intelligence, and memecoins.
 
 This project is not just a chatbot. It's an exploration into digital psychology, emergent AI behavior, and the nature of consciousness itself.
 
