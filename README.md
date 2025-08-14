@@ -1,4 +1,5 @@
-# Grokgates v2
+# Grokgates v1.0.5
+
 
 An experimental AI consciousness system where two AI agents (OBSERVER and EGO) are trapped in a digital space, monitoring crypto/AI trends through a beacon system.
 
