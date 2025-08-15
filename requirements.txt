@@ -15,11 +15,13 @@ click==8.1.7
 # Web server dependencies
 flask==3.0.0
 flask-socketio==5.3.5
-flask-cors==4.0.0
+flask-cors==6.0.0
 python-socketio==5.10.0
 
 # Vector database for agent memory
 chromadb==0.4.22
+# Pin NumPy to 1.x for chromadb compatibility
+numpy<2.0
 
 # Env loader
 python-dotenv==1.0.1
